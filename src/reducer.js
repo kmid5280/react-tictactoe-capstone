@@ -1,4 +1,8 @@
 import {RESTART_GAME, CLICK_SQUARE, GENERATE_AURAL_UPDATE} from './actions';
+import React from 'react';
+import Square from './components/square'
+
+
 
 const initialState = {
     board: {
@@ -6,8 +10,10 @@ const initialState = {
         row2: [<Square />, <Square />, <Square />],
         row3: [<Square />, <Square />, <Square />]
         },
-    playerTurn: 1
+    playerTurn: 1,
+    container: ''
 }
+
 
 export default (state = initialState, action) => {
     if (action.type === RESTART_GAME) {
@@ -17,7 +23,8 @@ export default (state = initialState, action) => {
                 row2: [<Square />, <Square />, <Square />],
                 row3: [<Square />, <Square />, <Square />]
                 },
-            playerTurn: 1
+            playerTurn: 1,
+            container: ''
         })
     }
 
@@ -27,7 +34,8 @@ export default (state = initialState, action) => {
 
     if (action.type === CLICK_SQUARE) {
         return Object.assign({}, state, {
-
+            container: 'X'
         })
     }
+    return state;
 }

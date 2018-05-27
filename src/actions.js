@@ -8,8 +8,9 @@ export const restartGame = () => ({
     type: RESTART_GAME,
 }) //I will want this to run when the 'restart game' button is pressed. it won't be necessary for the player to have actually won
 
-export const MAKE_SELECTION = 'MAKE_SELECTION';
-export const makeSelection = selection => ({
-    type: MAKE_SELECTION,
-    selection
+export const CLICK_SQUARE = 'CLICK_SQUARE';
+export const clickSquare = () => ({
+    type: CLICK_SQUARE,
+    
+    
 })

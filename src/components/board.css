@@ -1,0 +1,11 @@
+.board-wrapper {
+    left: 0;
+    right: 0;
+    margin: auto;
+    display: block;
+}
+
+.board-row-wrapper {
+    display: block;
+    margin-top: 0;
+}
