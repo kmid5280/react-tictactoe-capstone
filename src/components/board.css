@@ -1,8 +1,11 @@
 .board-wrapper {
     left: 0;
     right: 0;
+    width: 90vw;
+    height: 90vh;
     margin: auto;
-    display: block;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
 }
 
 .board-row-wrapper {
