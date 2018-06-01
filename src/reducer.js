@@ -10,7 +10,9 @@ const initialState = {
         {id: 7, container: ''}, {id: 8, container: ''}, {id: 9, container: ''}],
     playerTurn: true,
     xPlayer: [],
-    oPlayer: []
+    oPlayer: [],
+    xWinner: false,
+    oWinner: false
    
 }
 
@@ -48,20 +50,50 @@ export default (state = initialState, action) => {
     if (action.type === CLICK_SQUARE) {
         const newSquares = [...state.squares]
         const squareToUpdate = newSquares.find(square => square.id === action.id)
+        
+        
         if (!squareToUpdate.container) {
             const xPlayer = [...state.xPlayer];
             const oPlayer = [...state.oPlayer]
+            let xWinner = state.xWinner;
+            let oWinner = state.oWinner
             
             if (state.playerTurn) {
                 squareToUpdate.container = 'X'
                 xPlayer.push(action.id)
+                if ( 
+                    (xPlayer.includes(1 && 2 && 3)) || 
+                    (xPlayer.includes(1 && 4 && 7)) ||
+                    (xPlayer.includes(1 && 5 && 9)) ||
+                    (xPlayer.includes(2 && 5 && 8)) ||
+                    (xPlayer.includes(3 && 5 && 7)) ||
+                    (xPlayer.includes(3 && 6 && 9)) ||
+                    (xPlayer.includes(4 && 5 && 6)) ||
+                    (xPlayer.includes(7 && 8 && 9))
+                    ) {
+                      xWinner = true;
+                    }   
             }
             else {
                 squareToUpdate.container = 'O'
                 oPlayer.push(action.id)
+                if ( 
+                    (oPlayer.includes(1 && 2 && 3)) || 
+                    (oPlayer.includes(1 && 4 && 7)) ||
+                    (oPlayer.includes(1 && 5 && 9)) ||
+                    (oPlayer.includes(2 && 5 && 8)) ||
+                    (oPlayer.includes(3 && 5 && 7)) ||
+                    (oPlayer.includes(3 && 6 && 9)) ||
+                    (oPlayer.includes(4 && 5 && 6)) ||
+                    (oPlayer.includes(7 && 8 && 9))
+                    ) {
+                      oWinner = true;
+                    }   
             
             }
-                 
+            
+            
+         
         
             return Object.assign({}, state, {
                 squares: newSquares,
