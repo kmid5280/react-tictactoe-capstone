@@ -4,3 +4,12 @@
     border: 1px solid black;
     
 }
+
+.letter-style {
+    display: inline-block;
+    text-align: center;
+    margin: auto;
+    font-size: 60px;
+    color: lightgreen;
+    border: 1px solid teal;
+}

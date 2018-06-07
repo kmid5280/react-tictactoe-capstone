@@ -1,3 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Bungee'); 
+
 .header-title, .header-instructions {
     text-align: center;
+}
+
+.header-title {
+    font-size: 46px;
+    text-shadow: 2px 2px black;
+    font-family: 'Bungee', cursive;
+}
+
+.header-instructions {
+    font-size: 24px;
+}
+
+.header-wrapper {
+    background-color: gray;
+    color: orange;
+    height: 30%;
 }

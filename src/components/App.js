@@ -18,6 +18,8 @@ export default class App extends React.Component {
     }
   }
 
+
+
   restartGame() {
     this.setState({
       choices: ''
@@ -28,11 +30,7 @@ export default class App extends React.Component {
     
   }
 
-  makeChoice(choice) {
-    
-  }
-  
-  render() {
+   render() {
     return (
       <Router>
         <div>

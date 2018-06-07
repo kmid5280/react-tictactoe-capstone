@@ -14,3 +14,13 @@ export const clickSquare = id => ({
     id
     
 })
+
+export const XPLAYER_WIN = 'XPLAYER_WIN';
+export const xPlayerWin = () => ({
+    type: XPLAYER_WIN
+})
+
+export const OPLAYER_WIN = 'OPLAYER_WIN';
+export const oPlayerWin = () => ({
+    type: OPLAYER_WIN
+})
