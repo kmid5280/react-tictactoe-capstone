@@ -1,5 +1,10 @@
 const mongoose = require('mongoose')
 
+function StorageException(message) {
+    this.message = message;
+    this.name = "StorageException";
+ }
+
 const statsSchema = mongoose.Schema({
     wins: Number,
     losses: Number
@@ -7,7 +12,7 @@ const statsSchema = mongoose.Schema({
 
 statSchema.methods.serialize = function() {
     return {
-        id: this.id,
+        id: this._id,
         wins: this.wins,
         losses: this.losses
     }
@@ -15,4 +20,4 @@ statSchema.methods.serialize = function() {
 
 const Stats = mongoose.model("Stats", statsSchema)
 
-module.exports = Stats
+module.exports = {Stats}

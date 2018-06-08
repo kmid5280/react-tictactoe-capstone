@@ -6,6 +6,7 @@ import './App.css';
 import Header from './header';
 import Board from './board';
 import Login from './login';
+import Signup from './signup';
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 
 export default class App extends React.Component {
@@ -40,6 +41,7 @@ export default class App extends React.Component {
           <main>
             <Route exact path='/' component={Login} />
             <Route exact path='/board' component={Board} />
+            <Route exact path='/signup' component={Signup} />
           </main>
         
         </div>

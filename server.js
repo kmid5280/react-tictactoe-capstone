@@ -7,10 +7,29 @@ const {CLIENT_ORIGIN} = require('./config')
 const express = require('express')
 const morgan = require('morgan')
 const app = express();
-const {PORT, DATABASE_URL} = require('./config')
-const usersRouter = require('./usersRouter')
+const mongoose = require('mongoose')
+mongoose.Promise = global.Promise;
+const passport = require('passport')
+const { PORT, DATABASE_URL } = require('./config')
+const { router: usersRouter } = require('./usersRouter')
+const { router: authRouter, localStrategy, jwtStrategy } = require('./auth')
 
-app.use('./users', usersRouter)
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+    res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,PATCH,DELETE')
+    if (req.method === 'OPTIONS') {
+        return res.send(204)
+    }
+    next();
+})
+
+passport.use(localStrategy);
+passport.use(jwtStrategy)
+const jwtAuth = passport.authenticate('jwt', {session: false})
+
+app.use('/users', usersRouter)
+app.use('/stats', statsRouter)
 
 let server;
 
