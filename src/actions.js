@@ -24,3 +24,18 @@ export const OPLAYER_WIN = 'OPLAYER_WIN';
 export const oPlayerWin = () => ({
     type: OPLAYER_WIN
 })
+export const USER_SIGNUP = 'USER_SIGNUP'
+export const userSignup = data => ({
+    type: USER_SIGNUP,
+    data
+})
+export const USER_LOGIN = 'USER_LOGIN'
+export const userLogin = data => ({
+    type: USER_LOGIN,
+    data
+})
+
+export const GET_STATS = 'GET_STATS'
+export const getStats = () => ({
+    type: GET_STATS
+})

@@ -1,4 +1,4 @@
-import {RESTART_GAME, CLICK_SQUARE, GENERATE_AURAL_UPDATE, XPLAYER_WIN, OPLAYER_WIN} from './actions';
+import {RESTART_GAME, CLICK_SQUARE, GENERATE_AURAL_UPDATE, XPLAYER_WIN, OPLAYER_WIN, GET_STATS, USER_LOGIN} from './actions';
 import React from 'react';
 import Square from './components/square'
 import CheckWinner from './components/check-winner'
@@ -172,6 +172,13 @@ export default (state = initialState, action) => {
                 
         }
             
+    }
+    if (action.type === USER_LOGIN) {
+
+    }
+
+    if (action.type === GET_STATS) {
+
     }
     return state;
 }
