@@ -24,11 +24,35 @@ export const OPLAYER_WIN = 'OPLAYER_WIN';
 export const oPlayerWin = () => ({
     type: OPLAYER_WIN
 })
-export const USER_SIGNUP = 'USER_SIGNUP'
-export const userSignup = data => ({
-    type: USER_SIGNUP,
+export const USER_SIGNUP_SUCCESS = 'USER_SIGNUP_SUCCESS'
+export const userSignupSuccess = data => ({
+    type: USER_SIGNUP_SUCCESS,
     data
 })
+
+export const USER_SIGNUP_ERROR = 'USER_SIGNUP_ERROR'
+export const userSignupError = err => ({
+    type: USER_SIGNUP_ERROR,
+    err
+})
+
+export const userSignup = user => dispatch => {
+    
+    fetch('http://localhost:8080/users', {
+        body: JSON.stringify(user),
+        method: 'POST',
+        headers: {"content-type": "application/json"}
+    }).then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(user => {
+        dispatch(userSignupSuccess(user));
+    }).catch(err => {
+        dispatch(userSignupError(err));
+    });
+};
 export const USER_LOGIN = 'USER_LOGIN'
 export const userLogin = data => ({
     type: USER_LOGIN,
