@@ -4,8 +4,14 @@ import { clickSquare } from '../actions';
 import {connect} from 'react-redux'
 import './board.css'
 import CheckWinner from './check-winner'
+import { fetchProtectedData } from '../actions/protected-data';
+import requiresLogin from './requires-login'
 
 export class Board extends React.Component {
+
+componentDidMount() {
+    this.props.dispatch(fetchProtectedData())
+}
 
 switch(id) {
     this.props.dispatch(clickSquare(id))
@@ -27,8 +33,9 @@ switch(id) {
 }
 
 const mapStateToProps = state => ({
+    currentUser: state.auth,
     squares: state.squares
 
 })
 
-export default connect(mapStateToProps)(Board)
+export default requiresLogin()(connect(mapStateToProps)(Board))

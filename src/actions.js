@@ -53,13 +53,71 @@ export const userSignup = user => dispatch => {
         dispatch(userSignupError(err));
     });
 };
-export const USER_LOGIN = 'USER_LOGIN'
-export const userLogin = data => ({
-    type: USER_LOGIN,
+
+export const USER_LOGIN_SUCCESS = 'USER_LOGIN_SUCCESS'
+export const userLoginSuccess = data => ({
+    type: USER_LOGIN_SUCCESS,
     data
 })
 
-export const GET_STATS = 'GET_STATS'
-export const getStats = () => ({
-    type: GET_STATS
+export const USER_LOGIN_ERROR = 'USER_LOGIN_ERROR'
+export const userLoginError = err => {
+    type: USER_LOGIN_ERROR,
+    err
+}
+
+/*export const userLogin = (username, password) => dispatch => {
+    dispatch(authRequest())
+    return (
+        fetch('http://localhost:8080/auth/login', {
+        body: JSON.stringify(user),
+        method: 'POST',
+        headers: {"content-type": "application/json"}
+    }).then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(user => {
+        dispatch(userLoginSuccess(user));
+    }).catch(err => {
+        dispatch(userLoginError(err));
+    }));
+};*/
+
+export const GET_STATS_SUCCESS = 'GET_STATS_SUCCESS'
+export const getStatsSuccess = () => ({
+    type: GET_STATS_SUCCESS
 })
+
+export const GET_STATS_ERROR = 'GET_STATS_ERROR'
+export const getStatsError = err => {
+    type: GET_STATS_ERROR,
+    err
+}
+
+export const getStats = stats => dispatch => {
+    const token = localStorage.getItem("token")
+    if (!token) {
+        console.log('getstats error')
+    }
+    
+    fetch('http://localhost:8080/stats/', {
+        body: JSON.stringify(stats),
+        method: 'GET',
+        headers: {
+            "content-type": "application/json",
+            "Authorization": "Bearer " + token 
+        }
+    }).then(res => {
+        if (!res.ok) {
+            return Promise.reject(res.statusText);
+        }
+        return res.json();
+    }).then(stats => {
+        dispatch(getStatsSuccess(stats));
+    }).catch(err => {
+        dispatch(getStatsError(err));
+    });
+}
+
