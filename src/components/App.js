@@ -14,14 +14,14 @@ import {connect} from 'react-redux'
 import {refreshAuthToken} from '../actions/auth'
 
 export class App extends React.Component {
-  /*constructor(props) {
+  constructor(props) {
     super(props);
     
     this.state = {
       choices: '',
       winRate: '' //this will import the win/loss rate from the server
     }
-  }*/
+  }
 
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {
