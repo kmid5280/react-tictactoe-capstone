@@ -68,11 +68,11 @@ export class CheckWinner extends React.Component {
 }
 
 const mapStateToProps = state => ({
-    xPlayer: state.xPlayer,
-    oPlayer: state.oPlayer,
-    xWinner: state.xWinner,
-    oWinner: state.oWinner,
-    gameDraw: state.gameDraw
+    xPlayer: state.game.xPlayer,
+    oPlayer: state.game.oPlayer,
+    xWinner: state.game.xWinner,
+    oWinner: state.game.oWinner,
+    gameDraw: state.game.gameDraw
 })
 
 export default connect(mapStateToProps)(CheckWinner)

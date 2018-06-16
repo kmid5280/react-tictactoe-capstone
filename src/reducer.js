@@ -178,6 +178,7 @@ export default (state = initialState, action) => {
     }
     if (action.type === USER_LOGIN_SUCCESS) {
         return state;
+        console.log(state)
     }
 
     if (action.type === GET_STATS_SUCCESS) {

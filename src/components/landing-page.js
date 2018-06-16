@@ -5,6 +5,7 @@ import {Link, Redirect} from 'react-router-dom'
 import Login from './login'
 
 export function LandingPage(props) {
+    console.log(props)
     if (props.loggedIn) {
         return <Redirect to="/board" />
     }

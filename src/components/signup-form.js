@@ -13,7 +13,7 @@ export class SignupForm extends React.Component {
         const {username, password} = values;
         const stats = [0,0,0] //wins, losses, draws
         const user = {username, password, stats}
-        return this.props.dispatch(registerUser(user)).then(() => this.props.dispatch(login(username, password)))
+        return this.props.dispatch(registerUser(user)).then(() => this.props.dispatch(login(values.username, values.password)))
     }
 
     render() {
@@ -39,3 +39,5 @@ export default reduxForm({
     onSubmitFail: (errors, dispatch) =>
         dispatch(focus('registration', Object.keys(errors)[0]))
 })(SignupForm)
+
+

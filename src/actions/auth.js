@@ -43,9 +43,11 @@ const storeAuthInfo = (authToken, dispatch) => {
     saveAuthToken(authToken);
 };
 
-export const login = (username, password) => dispatch => {
+export const login = (values) => dispatch => {
+    const username = values.username;
+    const password = values.password;
     dispatch(authRequest());
-    console.log(`${API_BASE_URL}/auth/login`)
+    
     return (
         fetch(`${API_BASE_URL}/auth/login`, {
             method: 'POST',
@@ -102,3 +104,9 @@ export const refreshAuthToken = () => (dispatch, getState) => {
             clearAuthToken(authToken);
         });
 };
+
+export const logout = () => (dispatch, getState) => {
+    const authToken = getState().auth.authToken;
+    dispatch(clearAuth());
+    clearAuthToken(authToken);
+}
