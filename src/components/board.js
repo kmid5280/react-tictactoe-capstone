@@ -18,10 +18,6 @@ componentDidMount() {
     this.props.dispatch(fetchProtectedData())
 }
 
-//watchForLogout() {
-    //this.props.dispatch(logout())
-//}
-
 switch(id) {
     this.props.dispatch(clickSquare(id))
 }
@@ -29,9 +25,9 @@ switch(id) {
     render() {
         
         
-        /*if (!this.props.loggedIn) {
+        if (!this.props.loggedIn) {
             <Redirect to='/login' />
-        }*/
+        }
         const squares = this.props.squares
             .map(square => <Square key={square.id} {...square} onClick={id => this.switch(id)}/>)
         const username = this.props.username
