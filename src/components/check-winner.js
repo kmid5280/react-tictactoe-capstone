@@ -85,9 +85,9 @@ const mapStateToProps = state => ({
     xWinner: state.game.xWinner,
     oWinner: state.game.oWinner,
     gameDraw: state.game.gameDraw,    
-    /*wins: state.auth.currentUser.wins,
+    wins: state.auth.currentUser.wins,
     losses: state.auth.currentUser.losses,
-    draws: state.auth.currentUser.draws*/
+    draws: state.auth.currentUser.draws
 })
 
 export default connect(mapStateToProps)(CheckWinner)
