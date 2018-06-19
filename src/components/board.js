@@ -14,9 +14,9 @@ import Login from './login'
 export class Board extends React.Component {
 
 
-componentDidMount() {
+/*componentDidMount() {
     this.props.dispatch(fetchProtectedData())
-}
+}*/
 
 switch(id) {
     this.props.dispatch(clickSquare(id))
@@ -24,13 +24,16 @@ switch(id) {
 
     render() {
         
-        
+        console.log(this.props.loggedIn)
         if (!this.props.loggedIn) {
+            console.log('testing redirect');
             <Redirect to='/login' />
+            console.log('after redirect');
         }
         const squares = this.props.squares
             .map(square => <Square key={square.id} {...square} onClick={id => this.switch(id)}/>)
         const username = this.props.username
+        const userId = this.props.userId
         const wins = this.props.wins
         const losses = this.props.losses
         const draws = this.props.draws
@@ -56,6 +59,7 @@ const mapStateToProps = state => ({
     loggedIn: state.auth.currentUser !== null,
     squares: state.game.squares,
     username: state.auth.currentUser ? state.auth.currentUser.username : '',
+    userId: state.auth.currentUser ? state.auth.currentUser.userId : '',
     wins: state.auth.currentUser ? state.auth.currentUser.wins : '',
     losses: state.auth.currentUser ? state.auth.currentUser.losses : '',
     draws: state.auth.currentUser ? state.auth.currentUser.draws : '',

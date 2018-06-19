@@ -43,6 +43,7 @@ export class CheckWinner extends React.Component {
     }
     
     render() {
+        const userId = this.props.userId
         if (this.isWin()) {
             let wins = this.props.wins
             let losses = this.props.losses
@@ -51,19 +52,21 @@ export class CheckWinner extends React.Component {
             if (this.props.xWinner) {
                 message = 'You win'
                 wins = wins + 1
-                this.props.dispatch(updateStats(wins))
             }
             else if (this.props.oWinner) {
                 message = 'You lose'
                 losses = losses + 1
-                this.props.dispatch(updateStats(losses))
+                
             }
             else if (this.props.gameDraw) {
                 message = 'Nobody wins'
                 draws = draws + 1
-                this.props.dispatch(updateStats(draws))
+                
             }
+            this.props.dispatch(updateStats(userId, wins, losses, draws))
+            
             return (
+                
                 <div>
                     <p>{message}</p>
                     <p>Play again?</p>
@@ -84,6 +87,7 @@ const mapStateToProps = state => ({
     oPlayer: state.game.oPlayer,
     xWinner: state.game.xWinner,
     oWinner: state.game.oWinner,
+    userId: state.auth.currentUser,
     gameDraw: state.game.gameDraw,    
     wins: state.auth.currentUser.wins,
     losses: state.auth.currentUser.losses,

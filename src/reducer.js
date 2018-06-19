@@ -1,4 +1,4 @@
-import {RESTART_GAME, CLICK_SQUARE, GENERATE_AURAL_UPDATE, XPLAYER_WIN, OPLAYER_WIN, GET_STATS_SUCCESS, USER_LOGIN_SUCCESS, USER_SIGNUP_SUCCESS} from './actions';
+import {RESTART_GAME, CLICK_SQUARE, GENERATE_AURAL_UPDATE, XPLAYER_WIN, OPLAYER_WIN, GET_STATS_SUCCESS, USER_LOGIN_SUCCESS, USER_SIGNUP_SUCCESS, UPDATE_STATS} from './actions';
 import React from 'react';
 import Square from './components/square'
 import CheckWinner from './components/check-winner'
@@ -17,6 +17,9 @@ const initialState = {
     xWinner: false,
     oWinner: false,
     gameDraw: false,
+    /*wins: state.auth.currentUser.wins,
+    losses: state.auth.currentUser.losses,
+    draws: state.auth.currentUser.draws*/
    
 }
 
@@ -57,7 +60,8 @@ export default (state = initialState, action) => {
 
     if (action.type === XPLAYER_WIN) {
         return Object.assign({}, state, {
-            xWinner: true
+            xWinner: true,
+
         })
     }
 
@@ -66,6 +70,10 @@ export default (state = initialState, action) => {
             oWinner: true
         })
     }
+
+    
+
+   
 
     if (action.type === CLICK_SQUARE) {
         const newSquares = [...state.squares]

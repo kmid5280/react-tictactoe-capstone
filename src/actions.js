@@ -66,24 +66,13 @@ export const userLoginError = err => {
     err
 }
 
-/*export const userLogin = (username, password) => dispatch => {
-    dispatch(authRequest())
-    return (
-        fetch('http://localhost:8080/auth/login', {
-        body: JSON.stringify(user),
-        method: 'POST',
-        headers: {"content-type": "application/json"}
-    }).then(res => {
-        if (!res.ok) {
-            return Promise.reject(res.statusText);
-        }
-        return res.json();
-    }).then(user => {
-        dispatch(userLoginSuccess(user));
-    }).catch(err => {
-        dispatch(userLoginError(err));
-    }));
-};*/
+export const UPDATE_STATS = 'UPDATE_STATS'
+export const updateStats = (wins, losses, draws) => ({
+    type: UPDATE_STATS,
+    wins,
+    losses,
+    draws
+})
 
 export const GET_STATS_SUCCESS = 'GET_STATS_SUCCESS'
 export const getStatsSuccess = () => ({

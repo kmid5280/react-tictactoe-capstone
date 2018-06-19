@@ -10,9 +10,7 @@ export class LogoutButton extends React.Component {
         
     handleClick() {
        this.props.dispatch(logout())
-       //set loggedIn to false
-       
-        
+       //set loggedIn to false    
     }
 
     render() {

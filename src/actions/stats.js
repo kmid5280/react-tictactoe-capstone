@@ -3,14 +3,14 @@ import {SubmissionError} from 'redux-form';
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
 
-export const registerUser = user => dispatch => {
+export const newStats = stats => dispatch => {
     
-    return fetch(`${API_BASE_URL}/users`, {
+    return fetch(`${API_BASE_URL}/stats`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
         },
-        body: JSON.stringify(user)
+        body: JSON.stringify(stats)
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
@@ -27,16 +27,14 @@ export const registerUser = user => dispatch => {
         });
 };
 
-export const updateStats = (userId, wins, losses, draws) => dispatch => {
-    const reqBody = {wins: wins, losses: losses, draws: draws}
+export const updateStats = stats => dispatch => {
     
-    return fetch(`${API_BASE_URL}/users/${userId}`, {
+    return fetch(`${API_BASE_URL}/stats/:id`, {
         method: 'PUT',
         headers: {
-            'content-type': 'application/json',
-            
+            'content-type': 'application/json'
         },
-        body: JSON.stringify(reqBody)
+        body: JSON.stringify(stats)
     })
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
@@ -51,4 +49,4 @@ export const updateStats = (userId, wins, losses, draws) => dispatch => {
                 );
             }
         });
-}
+};
