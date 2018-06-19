@@ -1,9 +1,12 @@
 import React from 'react';
 import {restartGame, xPlayerWin, oPlayerWin} from '../actions'
+import {updateStats} from '../actions/users'
 import {connect} from 'react-redux'
 
 
 export class CheckWinner extends React.Component {
+    
+    
     isWin() {
         const {xWinner, oWinner, gameDraw} = this.props
         return xWinner || oWinner || gameDraw
@@ -41,15 +44,24 @@ export class CheckWinner extends React.Component {
     
     render() {
         if (this.isWin()) {
+            let wins = this.props.wins
+            let losses = this.props.losses
+            let draws = this.props.draws
             let message = ''
             if (this.props.xWinner) {
                 message = 'You win'
+                wins = wins + 1
+                this.props.dispatch(updateStats(wins))
             }
             else if (this.props.oWinner) {
                 message = 'You lose'
+                losses = losses + 1
+                this.props.dispatch(updateStats(losses))
             }
             else if (this.props.gameDraw) {
                 message = 'Nobody wins'
+                draws = draws + 1
+                this.props.dispatch(updateStats(draws))
             }
             return (
                 <div>
@@ -72,7 +84,10 @@ const mapStateToProps = state => ({
     oPlayer: state.game.oPlayer,
     xWinner: state.game.xWinner,
     oWinner: state.game.oWinner,
-    gameDraw: state.game.gameDraw
+    gameDraw: state.game.gameDraw,    
+    /*wins: state.auth.currentUser.wins,
+    losses: state.auth.currentUser.losses,
+    draws: state.auth.currentUser.draws*/
 })
 
 export default connect(mapStateToProps)(CheckWinner)
