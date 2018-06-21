@@ -7,7 +7,7 @@ const Square = props => {
     const className = `square ${props.container} ${props.on?'':'off'}`
     // how to stylize x and o's?
     return (
-        <div className={className} onClick={() => props.onClick(props.id)}>{props.container}</div>
+        <div className={className} onClick={() => props.onClick(props.id)}><div className="container-symbol">{props.container}</div></div>
     )
 
 }

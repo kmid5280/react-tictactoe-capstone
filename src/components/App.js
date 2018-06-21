@@ -55,7 +55,7 @@ export class App extends React.Component {
   render() {
     return (
       <Router>
-        <div>
+        <div className="app-wrapper">
           <header>
             <Header />
           </header>

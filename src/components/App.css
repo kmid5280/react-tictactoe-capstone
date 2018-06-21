@@ -14,6 +14,10 @@
   color: white;
 }
 
+.app-wrapper {
+  background-color: gray;
+}
+
 .App-title {
   font-size: 1.5em;
 }

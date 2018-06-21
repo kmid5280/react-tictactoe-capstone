@@ -1,20 +1,4 @@
-main {
-    background-color: gray;
-
-}
-
-.login-wrapper {
-    left:0;
-    right:0;
-    margin:auto;
-    display: block;
-    color: white;
-    text-shadow: 1px 1px black;
-    height: 70%;
-
-}
-
-.login-username, .login-password {
+.signup-username, .signup-password, .signup-password-confirm {
     left:0;
     right:0;
     margin:auto;
@@ -24,7 +8,7 @@ main {
     font-size: 24px
 }
 
-.login-submit-button {
+.signup-submit-button {
     margin-top: 30px;
     width: 30%;
     height: 50px;
@@ -36,6 +20,3 @@ main {
     background-color: teal;
     font-size: 24px;
 }
- .login-no-account-text {
-     text-align: center;
- }

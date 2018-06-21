@@ -1,15 +1,21 @@
 .square {
     width: 100%;
     height: 100%;
-    border: 1px solid black;
+    border: 3px solid black;
+    position: relative;    
     
 }
 
-.letter-style {
-    display: inline-block;
+.container-symbol {
+    display: block;
+    padding: 30px;
+    position: absolute;
     text-align: center;
+    left: 0;
+    right: 0;
     margin: auto;
     font-size: 60px;
     color: lightgreen;
-    border: 1px solid teal;
+    text-shadow: -1px 0 teal, 0 1px teal, 1px 0 teal, 0 -1px teal;
+    
 }
