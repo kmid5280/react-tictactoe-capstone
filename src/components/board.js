@@ -24,11 +24,10 @@ switch(id) {
 
     render() {
         
-        console.log(this.props.loggedIn)
         if (!this.props.loggedIn) {
-            console.log('testing redirect');
-            <Redirect to='/login' />
-            console.log('after redirect');
+            
+            return <Redirect to='/login' />
+            
         }
         const squares = this.props.squares
             .map(square => <Square key={square.id} {...square} onClick={id => this.switch(id)}/>)
@@ -56,7 +55,7 @@ switch(id) {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null,
+    loggedIn: !!state.auth.currentUser,
     squares: state.game.squares,
     username: state.auth.currentUser ? state.auth.currentUser.username : '',
     userId: state.auth.currentUser ? state.auth.currentUser.userId : '',

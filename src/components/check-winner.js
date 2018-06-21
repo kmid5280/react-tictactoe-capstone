@@ -44,6 +44,7 @@ export class CheckWinner extends React.Component {
     
     render() {
         const userId = this.props.userId
+        const authToken = this.props.authToken
         if (this.isWin()) {
             let wins = this.props.wins
             let losses = this.props.losses
@@ -63,7 +64,9 @@ export class CheckWinner extends React.Component {
                 draws = draws + 1
                 
             }
-            this.props.dispatch(updateStats(userId, wins, losses, draws))
+            
+            
+            this.props.dispatch(updateStats(userId, authToken, wins, losses, draws))
             
             return (
                 
@@ -87,11 +90,12 @@ const mapStateToProps = state => ({
     oPlayer: state.game.oPlayer,
     xWinner: state.game.xWinner,
     oWinner: state.game.oWinner,
-    userId: state.auth.currentUser,
+    authToken: state.auth ? state.auth.authToken : null,
+    userId: state.auth.currentUser ? state.auth.currentUser.id : null,
     gameDraw: state.game.gameDraw,    
-    wins: state.auth.currentUser.wins,
-    losses: state.auth.currentUser.losses,
-    draws: state.auth.currentUser.draws
+    wins: state.auth.currentUser ? state.auth.currentUser.wins : '',
+    losses: state.auth.currentUser ? state.auth.currentUser.losses : '',
+    draws: state.auth.currentUser ? state.auth.currentUser.draws : '',
 })
 
 export default connect(mapStateToProps)(CheckWinner)

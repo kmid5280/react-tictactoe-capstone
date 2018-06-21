@@ -18,7 +18,7 @@ export function LandingPage(props) {
 }
 
 const mapStateToProps = state => ({
-    loggedIn: state.auth.currentUser !== null
+    loggedIn: !!state.auth.currentUser
 });
 
 export default connect(mapStateToProps)(LandingPage);
