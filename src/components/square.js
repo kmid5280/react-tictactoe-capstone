@@ -6,8 +6,11 @@ import {connect} from 'react-redux'
 const Square = props => {
     const className = `square ${props.container} ${props.on?'':'off'}`
     // how to stylize x and o's?
+
+    //do not make this square clickable if it already has a X or O
+    const click = !props.container ? () => props.onClick(props.id) : () => {} ;
     return (
-        <div className={className} onClick={() => props.onClick(props.id)}><div className="container-symbol">{props.container}</div></div>
+        <div className={className} onClick={click}><div className="container-symbol">{props.container}</div></div>
     )
 
 }
