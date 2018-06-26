@@ -35,7 +35,7 @@ export class Login extends React.Component {
                     <Field component="input" placeholder="Enter username" name="username" type="text" id="login-username" className="login-username" validate={[required, nonEmpty]}/>
                     <Field type="password" placeholder="Enter password" component="input" name="password" className="login-password" id="login-password" validate={[required, nonEmpty]}/>
                     <button type="submit" className="login-submit-button">Sign in</button>
-                    <p className="login-no-account-text">Don't have an account? <Link to='/signup'>Sign up!</Link></p>
+                    <p className="login-no-account-text">Don't have an account? <Link to='/signup'>Sign up!</Link> Or use DEMOUSER and DEMOPASSWORD to try it out.</p>
                     
                     
                     </form>
