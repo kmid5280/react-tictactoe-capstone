@@ -17,10 +17,6 @@ export class App extends React.Component {
   constructor(props) {
     super(props);
     
-    this.state = {
-      choices: '',
-      winRate: '' //this will import the win/loss rate from the server
-    }
   }
 
   componentDidUpdate(prevProps) {

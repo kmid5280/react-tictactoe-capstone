@@ -6,6 +6,19 @@
     margin: auto;
     display: grid;
     grid-template-columns: 33% 33% 33%;
+    
+    
+}
+
+.board-wrapper:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+
+.space {
+    width: 100%;
+    height: 20px;
 }
 
 .board-row-wrapper {
@@ -13,14 +26,28 @@
     margin-top: 0;
 }
 
+.welcome-text {
+    text-align: center;
+    font-size: 34px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: orange;
+    margin-bottom: 20px;
+    display: block;
+
+}
+
+.stats-text {
+    text-align: center;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    color: white;
+    font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
 @media only screen and (max-width: 620px) {
     .board-wrapper {
-        left: 0;
-        right: 0;
         width: 60vw;
-        height: 60vh;
-        margin: auto;
-        display: grid;
-        grid-template-columns: 33% 33% 33%;
     }
 }
+

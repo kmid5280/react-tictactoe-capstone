@@ -3,6 +3,7 @@ import React from 'react'
 import {Link, Redirect} from 'react-router-dom'
 import {logout} from '../actions/auth'
 import {connect} from 'react-redux'
+import './logout-button.css'
 
 
 
@@ -15,7 +16,7 @@ export class LogoutButton extends React.Component {
 
     render() {
         return (
-            <button onClick={(e) => this.handleClick(e)}>Log out</button>
+            <button className="logout-button" onClick={(e) => this.handleClick(e)}>Log out</button>
         )
     }
 }

@@ -1,0 +1,17 @@
+.logout-button {
+    display: block;
+    margin-left:auto; 
+    margin-right:0;
+    margin-right: 20px;
+    width: 10%;
+    height: 30px;
+    color: white;
+    background-color: black;
+    font-size: 16px;
+}
+
+@media only screen and (max-width: 620px) {
+    .logout-button {
+        width: 20%;
+    }
+}

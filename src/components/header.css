@@ -10,12 +10,10 @@
     font-family: 'Bungee', cursive;
 }
 
-.header-instructions {
-    font-size: 24px;
-}
 
 .header-wrapper {
     background-color: gray;
     color: orange;
     height: 30%;
 }
+

@@ -5,6 +5,7 @@ import {
     AUTH_SUCCESS,
     AUTH_ERROR
 } from '../actions/auth';
+import {UPDATE_STATS_IN_USER} from "../actions/users";
 
 const initialState = {
     authToken: null, // authToken !== null does not mean it has been validated
@@ -38,6 +39,15 @@ export default function reducer(state = initialState, action) {
             loading: false,
             error: action.error
         });
+    } else  if (action.type === UPDATE_STATS_IN_USER) {
+      return Object.assign({}, state, {
+            currentUser: {
+                ...state.currentUser,
+                wins: action.user.wins,
+                losses: action.user.losses,
+                draws: action.user.draws
+            }
+      });
     }
     return state;
 }

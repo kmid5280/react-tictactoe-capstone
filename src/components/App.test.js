@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import Provider from './App';
+import {shallow} from 'enzyme'
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('<Provider />', () => { 
+  it('renders without crashing', () => {
+    shallow(<Provider />)
+  })
 });

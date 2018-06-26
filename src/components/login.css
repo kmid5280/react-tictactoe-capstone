@@ -10,7 +10,7 @@ main {
     display: block;
     color: white;
     text-shadow: 1px 1px black;
-    height: 70%;
+    height: 70%; 
 
 }
 
@@ -19,23 +19,56 @@ main {
     right:0;
     margin:auto;
     display:block;
-    width: 30%;
+    width: 40%;
     height: 50px;
-    font-size: 24px
+    margin-bottom: 2px;
+    font-size: 24px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 3px;
+    padding: 5px;
 }
 
 .login-submit-button {
     margin-top: 30px;
-    width: 30%;
+    width: 40%;
     height: 50px;
     display: block;
     left: 0;
     right: 0;
     margin: auto;
     border-radius: 3px;
-    background-color: teal;
+    background-color: black;
+    color: white;
     font-size: 24px;
 }
  .login-no-account-text {
      text-align: center;
+     margin-top: 15px;
  }
+
+.login-instructions {
+    font-size: 24px;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 30px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    color: orange;
+    text-align: center;
+}
+
+@media only screen and (max-width: 620px) {
+    .login-username, .login-password {
+        width: 80%
+    }
+
+    .login-instructions {
+        margin-left: 5%;
+        margin-right: 5%;
+        font-size: 18px;
+    }
+
+    .login-submit-button {
+        width: 80%;
+    }
+}

@@ -5,6 +5,7 @@ import './login.css'
 import {connect} from 'react-redux'
 import {login} from '../actions/auth'
 import {required, nonEmpty} from '../validators';
+import Input from './input'
 
 export class Login extends React.Component {
    
@@ -28,6 +29,7 @@ export class Login extends React.Component {
         return(
             <main>
                 <div className="login-wrapper">
+                <h3 className="login-instructions">Instructions: Log in. Click on the tic-tac-toe grid to play. The game will keep track of your statistics. Have fun!</h3>
                     <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
                     {error}
                     <Field component="input" placeholder="Enter username" name="username" type="text" id="login-username" className="login-username" validate={[required, nonEmpty]}/>

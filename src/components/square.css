@@ -2,20 +2,34 @@
     width: 100%;
     height: 100%;
     border: 3px solid black;
-    position: relative;    
+    position: relative;
     
+}
+
+.square:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
 }
 
 .container-symbol {
     display: block;
-    padding: 30px;
+    padding-top: 5%;
     position: absolute;
     text-align: center;
     left: 0;
     right: 0;
     margin: auto;
     font-size: 60px;
+    font-size: 8vw;
     color: lightgreen;
     text-shadow: -1px 0 teal, 0 1px teal, 1px 0 teal, 0 -1px teal;
     
+}
+
+@media only screen and (max-width: 620px) {
+    .container-symbol {
+        font-size: 17vw;
+        padding-top: 0;
+    }
 }
