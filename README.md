@@ -3,8 +3,8 @@
 https://obscure-cliffs-37897.herokuapp.com/
 
 ## Screenshots of Tic Tac Toe
-![Screenshot 1](/screenshot1.jpg?raw=true "Screenshot 1")
-![Screenshot 2](/screenshot2.jpg?raw=true "Screenshot 2")
+![Screenshot 1](/screenshot1.JPG?raw=true "Screenshot 1")
+![Screenshot 2](/screenshot2.JPG?raw=true "Screenshot 2")
 
 
 ## Summary
