@@ -1,3 +1,5 @@
+import API_BASE_URL from './config'
+
 export const GENERATE_AURAL_UPDATE = 'GENERATE_AURAL_UPDATE' //this will display the current win/loss ratio
 export const generateAuralUpdate = () => ({
     type: GENERATE_AURAL_UPDATE
@@ -40,7 +42,7 @@ export const userSignupError = err => ({
 
 export const userSignup = user => dispatch => {
     
-    fetch('http://localhost:8080/users', {
+    fetch(`${API_BASE_URL}/users`, {
         body: JSON.stringify(user),
         method: 'POST',
         headers: {"content-type": "application/json"}
@@ -93,7 +95,7 @@ export const getStats = stats => dispatch => {
         console.log('getstats error')
     }
     
-    fetch('http://localhost:8080/stats/', {
+    fetch(`${API_BASE_URL}/stats/`, {
         body: JSON.stringify(stats),
         method: 'GET',
         headers: {
