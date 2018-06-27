@@ -15,7 +15,7 @@ export const updateStatsInUser = (user, xWinner, oWinner, gameDraw) => ({
 
 export const registerUser = user => dispatch => {
     
-    return fetch(`${API_BASE_URL}/users`, {
+    return fetch(`${API_BASE_URL}users`, {
         method: 'POST',
         headers: {
             'content-type': 'application/json'
@@ -40,7 +40,7 @@ export const registerUser = user => dispatch => {
 export const endGame = (userId, authToken, wins, losses, draws, xWinner, oWinner, gameDraw) => dispatch => {
     const reqBody = {wins: wins, losses: losses, draws: draws}
     
-    return fetch(`${API_BASE_URL}/users/${userId}`, {
+    return fetch(`${API_BASE_URL}users/${userId}`, {
         method: 'PUT',
         headers: {
             'content-type': 'application/json',
