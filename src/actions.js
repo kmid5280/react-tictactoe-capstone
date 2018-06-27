@@ -40,7 +40,7 @@ export const userSignupError = err => ({
 
 export const userSignup = user => dispatch => {
     
-    fetch(`https://obscure-cliffs-37897.herokuapp.com/users`, {
+    fetch(`https://stark-hamlet-33607.herokuapp.com/users`, {
         body: JSON.stringify(user),
         method: 'POST',
         headers: {"content-type": "application/json"}
@@ -93,7 +93,7 @@ export const getStats = stats => dispatch => {
         console.log('getstats error')
     }
     
-    fetch(`https://obscure-cliffs-37897.herokuapp.com/stats/`, {
+    fetch(`https://stark-hamlet-33607.herokuapp.com/stats/`, {
         body: JSON.stringify(stats),
         method: 'GET',
         headers: {

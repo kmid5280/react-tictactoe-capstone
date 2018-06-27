@@ -49,7 +49,7 @@ export const login = (values) => dispatch => {
     dispatch(authRequest());
     
     return (
-        fetch(`${API_BASE_URL}/auth/login`, {
+        fetch(`${API_BASE_URL}auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
