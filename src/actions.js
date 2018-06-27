@@ -1,5 +1,3 @@
-import API_BASE_URL from './config'
-
 export const GENERATE_AURAL_UPDATE = 'GENERATE_AURAL_UPDATE' //this will display the current win/loss ratio
 export const generateAuralUpdate = () => ({
     type: GENERATE_AURAL_UPDATE
@@ -42,7 +40,7 @@ export const userSignupError = err => ({
 
 export const userSignup = user => dispatch => {
     
-    fetch(`${API_BASE_URL}/users`, {
+    fetch(`https://obscure-cliffs-37897.herokuapp.com/users`, {
         body: JSON.stringify(user),
         method: 'POST',
         headers: {"content-type": "application/json"}
@@ -95,7 +93,7 @@ export const getStats = stats => dispatch => {
         console.log('getstats error')
     }
     
-    fetch(`${API_BASE_URL}/stats/`, {
+    fetch(`https://obscure-cliffs-37897.herokuapp.com/stats/`, {
         body: JSON.stringify(stats),
         method: 'GET',
         headers: {
