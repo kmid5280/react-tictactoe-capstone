@@ -31,14 +31,8 @@ export class Login extends React.Component {
                 <div className="login-wrapper">
                 <h3 className="login-instructions">Instructions: Log in. Click on the tic-tac-toe grid to play. The game will keep track of your statistics. Have fun!</h3>
                     <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values)
-                    .catch(error => {
-                        // how you pass server-side validation errors back is up to you
-                        if(error.validationErrors) {
-                          throw new SubmissionError(error.validationErrors)
-                        }
-                    })
                     )}>
-                    {error}
+                    
 
                     <Field component="input" placeholder="Enter username" name="username" type="text" id="login-username" className="login-username" validate={[required, nonEmpty]}/>
                     <Field type="password" placeholder="Enter password" component="input" name="password" className="login-password" id="login-password" validate={[required, nonEmpty]}/>
