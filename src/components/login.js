@@ -45,13 +45,7 @@ export class Login extends React.Component {
     }
 }
 
-const mapStateToProps = state => ({
-    error: state.auth.error
-})
-
-export default connect(mapStateToProps)(Login)
-
-/*export default reduxForm({
+export default reduxForm({
     form: 'login',
     onSubmitFail: (errors, dispatch) => dispatch(focus('login', 'username'))
-})(Login)*/
+})(Login)
