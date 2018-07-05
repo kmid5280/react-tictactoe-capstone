@@ -16,7 +16,7 @@ export function Signup(props) {
     return(
         <main>
             <SignupForm />
-            <Link to='/'><p className="login-link">Back to main page</p></Link>
+            <Link className="login-link" to='/'>Back to main page</Link>
         </main>
     )
 }

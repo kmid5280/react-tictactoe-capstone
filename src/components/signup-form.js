@@ -1,5 +1,5 @@
 import React from 'react';
-import {Field, reduxForm, focus} from 'redux-form';
+import {Field, reduxForm, SubmissionError, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import './signup-form.css'
@@ -15,8 +15,10 @@ export class SignupForm extends React.Component {
         
         const user = {username, password}
         return this.props.dispatch(registerUser(user))
-        //.then(() => this.props.dispatch(newStats))
-        .then(() => this.props.dispatch(login(values)))
+        .then(this.props.dispatch(login(values)))
+        .catch(err => {
+            throw new SubmissionError({_error: err.errors._error})
+        })     
     }
 
     render() {
@@ -30,7 +32,8 @@ export class SignupForm extends React.Component {
         }
         return (
             
-            <form onSubmit={this.props.handleSubmit(values => this.onSubmit(values))}>
+            <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
+                
                 <div className="signup-wrapper">
                     {error}
                     

@@ -101,7 +101,7 @@ switch(id) {
             
             <main>
                 <LogoutButton />
-                <div className="welcome-text">Welcome {username}!</div>
+                <div className="welcome-text">Welcome {username}! Please click a square to begin.</div>
                 <div className="stats-text">Lifetime stats: {wins} wins, {losses} losses, {draws} draws.</div>
                 <div className="board-wrapper">
                 {squares}

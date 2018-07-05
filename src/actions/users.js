@@ -55,6 +55,7 @@ export const endGame = (userId, authToken, wins, losses, draws, xWinner, oWinner
         })
         .catch(err => {
             const {reason, message, location} = err;
+            console.log(err)
             if (reason === 'ValidationError') {
                 // Convert ValidationErrors into SubmissionErrors for Redux Form
                 return Promise.reject(
