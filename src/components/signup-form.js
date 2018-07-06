@@ -3,8 +3,6 @@ import {Field, reduxForm, SubmissionError, focus} from 'redux-form';
 import {registerUser} from '../actions/users';
 import {login} from '../actions/auth';
 import './signup-form.css'
-import {newStats} from '../actions/stats'
-import Input from './input';
 import {required, nonEmpty, matches, length, isTrimmed} from '../validators';
 const passwordLength = length({min: 8, max: 72});
 const matchesPassword = matches('password');
@@ -15,8 +13,10 @@ export class SignupForm extends React.Component {
         
         const user = {username, password}
         return this.props.dispatch(registerUser(user))
-        .then(this.props.dispatch(login(values)))
+        .then(console.log('running sign in'))
+        .then(() => this.props.dispatch(login(values)))
         .catch(err => {
+            console.log('signup error')
             throw new SubmissionError({_error: err.errors._error})
         })     
     }

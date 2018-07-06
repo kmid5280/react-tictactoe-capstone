@@ -2,7 +2,6 @@ import {SubmissionError} from 'redux-form';
 
 import {API_BASE_URL} from '../config';
 import {normalizeResponseErrors} from './utils';
-import jwtDecode from 'jwt-decode'
 
 export const UPDATE_STATS_IN_USER = 'UPDATE_STATS_IN_USER';
 export const updateStatsInUser = (user, xWinner, oWinner, gameDraw) => ({
@@ -25,6 +24,7 @@ export const registerUser = user => dispatch => {
         .then(res => normalizeResponseErrors(res))
         .then(res => res.json())
         .catch(err => {
+            
             const {reason, message, location} = err;
             if (reason === 'ValidationError') {
                 // Convert ValidationErrors into SubmissionErrors for Redux Form

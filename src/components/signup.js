@@ -1,9 +1,6 @@
 import React from 'react';
-import {registerUser} from '../actions/users'
-import {reduxForm, Field} from 'redux-form'
 import './signup.css'
 import {connect} from 'react-redux'
-import {userSignup} from '../actions'
 import {Link, Redirect} from 'react-router-dom';
 import SignupForm from './signup-form'
 

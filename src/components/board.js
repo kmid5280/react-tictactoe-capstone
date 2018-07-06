@@ -4,12 +4,12 @@ import { clickSquare } from '../actions';
 import {connect} from 'react-redux'
 import './board.css'
 import CheckWinner from './check-winner'
-import { fetchProtectedData } from '../actions/protected-data';
+//import { fetchProtectedData } from '../actions/protected-data';
 import requiresLogin from './requires-login'
-import {logout} from '../actions/auth'
+//import {logout} from '../actions/auth'
 import LogoutButton from './logout-button'
-import {Link, Redirect} from 'react-router-dom'
-import Login from './login'
+import {Redirect} from 'react-router-dom'
+//import Login from './login'
 import {endGame} from "../actions/users";
 
 export class Board extends React.Component {

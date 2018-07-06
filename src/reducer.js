@@ -1,7 +1,4 @@
-import {RESTART_GAME, CLICK_SQUARE, GENERATE_AURAL_UPDATE, XPLAYER_WIN, OPLAYER_WIN, GET_STATS_SUCCESS, USER_LOGIN_SUCCESS, USER_SIGNUP_SUCCESS, UPDATE_STATS} from './actions';
-import React from 'react';
-import Square from './components/square'
-import CheckWinner from './components/check-winner'
+import {RESTART_GAME, CLICK_SQUARE, XPLAYER_WIN, OPLAYER_WIN, GET_STATS_SUCCESS, USER_LOGIN_SUCCESS} from './actions';
 import {UPDATE_STATS_IN_USER} from "./actions/users";
 
 
@@ -48,9 +45,6 @@ export default (state = initialState, action) => {
         });
     }
 
-    if (action.type === GENERATE_AURAL_UPDATE) {
-
-    }
 
     if (action.type === XPLAYER_WIN) {
         return Object.assign({}, state, {
@@ -65,8 +59,6 @@ export default (state = initialState, action) => {
         })
     }
 
-   
-
     if (action.type === CLICK_SQUARE) {
 
         return Object.assign({}, state, {
@@ -75,13 +67,6 @@ export default (state = initialState, action) => {
             oPlayer: [...action.oPlayer],
             totalSquares: [...action.totalSquares]
         })
-    }
-    if (action.type === USER_SIGNUP_SUCCESS) {
-        return state;
-    }
-    if (action.type === USER_LOGIN_SUCCESS) {
-        return state;
-        console.log(state)
     }
 
     if (action.type === GET_STATS_SUCCESS) {

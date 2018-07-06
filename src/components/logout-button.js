@@ -1,6 +1,5 @@
 import React from 'react'
 
-import {Link, Redirect} from 'react-router-dom'
 import {logout} from '../actions/auth'
 import {connect} from 'react-redux'
 import './logout-button.css'

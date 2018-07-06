@@ -8,16 +8,11 @@ import Board from './board';
 import Login from './login';
 import LandingPage from './landing-page'
 import Signup from './signup';
-import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
-import {withRouter} from 'react-router-dom'
+import {BrowserRouter as Router, Route} from 'react-router-dom';
 import {connect} from 'react-redux'
 import {refreshAuthToken} from '../actions/auth'
 
 export class App extends React.Component {
-  constructor(props) {
-    super(props);
-    
-  }
 
   componentDidUpdate(prevProps) {
     if (!prevProps.loggedIn && this.props.loggedIn) {

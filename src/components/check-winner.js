@@ -1,5 +1,5 @@
 import React from 'react';
-import {restartGame, xPlayerWin, oPlayerWin} from '../actions'
+import {restartGame /*xPlayerWin, oPlayerWin*/} from '../actions'
 //import {updateStats} from '../actions/users'
 import {connect} from 'react-redux'
 import './check-winner.css'
@@ -14,12 +14,12 @@ export class CheckWinner extends React.Component {
     }
     
     render() {
-        const userId = this.props.userId
-        const authToken = this.props.authToken
+        //const userId = this.props.userId
+        //const authToken = this.props.authToken
         if (this.isWin()) {
-            let wins = this.props.wins
-            let losses = this.props.losses
-            let draws = this.props.draws
+            //let wins = this.props.wins
+            //let losses = this.props.losses
+            //let draws = this.props.draws
             let message = ''
             if (this.props.xWinner) {
                 message = 'You win'

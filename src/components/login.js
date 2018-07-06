@@ -2,16 +2,17 @@ import React from 'react';
 import {reduxForm, Field, SubmissionError, focus} from 'redux-form';
 import {Link} from 'react-router-dom';
 import './login.css'
-import {connect} from 'react-redux'
+//import {connect} from 'react-redux'
 import {login} from '../actions/auth'
 import {required, nonEmpty} from '../validators';
-import Input from './input'
+//import Input from './input'
 
 export class Login extends React.Component {
    
     onSubmit(values) {
         return this.props.dispatch(login(values))
         .catch(err => {
+            console.log('true')
             throw new SubmissionError({_error: err.errors._error})
         })
     }

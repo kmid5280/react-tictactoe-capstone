@@ -58,8 +58,8 @@ export const login = (values) => dispatch => {
                 username,
                 password
             })
-        })
-            // Reject any requests which don't return a 200 status, creating
+            
+        })  // Reject any requests which don't return a 200 status, creating
             // errors which follow a consistent format
             .then(res => normalizeResponseErrors(res))
             .then(res => res.json())
