@@ -13,10 +13,9 @@ export class SignupForm extends React.Component {
         
         const user = {username, password}
         return this.props.dispatch(registerUser(user))
-        .then(console.log('running sign in'))
-        .then(() => this.props.dispatch(login(values)))
+        //.then(() => this.props.dispatch(login(values)))
         .catch(err => {
-            console.log('signup error')
+            console.log({_error: err.errors._error})
             throw new SubmissionError({_error: err.errors._error})
         })     
     }
@@ -35,12 +34,13 @@ export class SignupForm extends React.Component {
             <form onSubmit={this.props.handleSubmit(this.onSubmit.bind(this))}>
                 
                 <div className="signup-wrapper">
-                    {error}
                     
-                    <Field validate={[required, nonEmpty, isTrimmed]} placeholder="Enter username" type="text" name="username" component="input" id="signup-username" className="signup-username"/>
-                    <Field validate={[required, passwordLength, isTrimmed]} placeholder="Enter password" name="password" component="input" type="password" className="signup-password" id="signup-password" />
+                    
+                    <Field /*validate={[required, nonEmpty, isTrimmed]}*/ placeholder="Enter username" type="text" name="username" component="input" id="signup-username" className="signup-username"/>
+                    <Field /*validate={[required, passwordLength, isTrimmed]}*/ placeholder="Enter password" name="password" component="input" type="password" className="signup-password" id="signup-password" />
                     <Field name="passwordConfirm" component="input" placeholder="Confirm password" type="password" className="signup-password-confirm" id="signup-password-confirm" validate={[required, nonEmpty, matchesPassword]}/>
                     <button type="submit" className="signup-submit-button">Sign up</button>
+                    <div className="signup-form-error">{error}</div>
                 </div>
             </form>
             
