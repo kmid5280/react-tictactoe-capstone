@@ -13,7 +13,7 @@ export class SignupForm extends React.Component {
         
         const user = {username, password}
         return this.props.dispatch(registerUser(user))
-        //.then(() => this.props.dispatch(login(values)))
+        .then(() => this.props.dispatch(login(values)))
         .catch(err => {
             console.log({_error: err.errors._error})
             throw new SubmissionError({_error: err.errors._error})
