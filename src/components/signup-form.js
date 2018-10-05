@@ -36,8 +36,8 @@ export class SignupForm extends React.Component {
                 <div className="signup-wrapper">
                     
                     
-                    <Field /*validate={[required, nonEmpty, isTrimmed]}*/ placeholder="Enter username" type="text" name="username" component="input" id="signup-username" className="signup-username"/>
-                    <Field /*validate={[required, passwordLength, isTrimmed]}*/ placeholder="Enter password" name="password" component="input" type="password" className="signup-password" id="signup-password" />
+                    <Field placeholder="Enter username" type="text" name="username" component="input" id="signup-username" className="signup-username"/>
+                    <Field placeholder="Enter password" name="password" component="input" type="password" className="signup-password" id="signup-password" />
                     <Field name="passwordConfirm" component="input" placeholder="Confirm password" type="password" className="signup-password-confirm" id="signup-password-confirm" validate={[required, nonEmpty, matchesPassword]}/>
                     <button type="submit" className="signup-submit-button">Sign up</button>
                     <div className="signup-form-error">{error}</div>

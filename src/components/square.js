@@ -1,7 +1,5 @@
 import React from 'react';
 import './square.css'
-import {clickSquare} from '../actions'
-import {connect} from 'react-redux'
 
 const Square = props => {
     const className = `square ${props.container} ${props.on?'':'off'}`

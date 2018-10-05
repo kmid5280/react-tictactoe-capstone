@@ -14,9 +14,6 @@ const initialState = {
     xWinner: false,
     oWinner: false,
     gameDraw: false,
-    /*wins: state.auth.currentUser.wins,
-    losses: state.auth.currentUser.losses,
-    draws: state.auth.currentUser.draws*/
    
 }
 
