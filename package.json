@@ -4,19 +4,19 @@
   "private": true,
   "dependencies": {
     "bcryptjs": "^2.4.3",
-    "jsonwebtoken": "^8.5.0",
+    "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^2.2.0",
-    "mongoose": "^5.4.15",
+    "mongoose": "^5.6.4",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-    "react": "^16.8.3",
-    "react-dom": "^16.8.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-redux": "^6.0.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.5",
-    "redux": "^4.0.1",
-    "redux-form": "^8.1.0",
+    "react-scripts": "^3.0.1",
+    "redux": "^4.0.4",
+    "redux-form": "^8.2.4",
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
@@ -26,9 +26,9 @@
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "enzyme": "^3.9.0",
-    "enzyme-adapter-react-16": "^1.9.1",
-    "react-test-renderer": "^16.8.3"
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "react-test-renderer": "^16.8.6"
   },
   "browserslist": [
     ">0.2%",
